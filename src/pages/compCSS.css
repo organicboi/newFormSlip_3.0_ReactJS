@@ -1,0 +1,151 @@
+.main_container {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 700;
+
+  gap: 10px;
+  padding: 0 3px 3px 3px;
+  /* border: 3px gray solid; */
+}
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  padding: 0 3px 3px 3px;
+}
+.date {
+  padding-top: 10px;
+  background-color: #fecda6;
+  border: 3px black solid;
+  display: flex;
+  flex-direction: column;
+  /* gap: 20px; */
+  align-items: center;
+  /* margin: 10px 0; */
+}
+.date > :nth-child(1) > span {
+  color: black;
+  font-family: roboto;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 25px;
+  letter-spacing: 2px;
+}
+
+.date {
+  margin: 3px;
+}
+.date > div {
+  display: flex;
+  justify-content: space-evenly;
+}
+.date > div > span {
+  color: rgb(1, 63, 196);
+}
+.date > h1 {
+  border: 4px solid brown;
+  margin: 10px;
+  padding: 8px;
+  border-radius: 10px;
+}
+.box {
+  padding: 7px;
+  border: 3px gray solid;
+  background-color: #ece3ce;
+}
+.form {
+  /* border: 3px gold solid; */
+}
+.section_1,
+.section_2 {
+  padding: 12px;
+}
+select {
+  color: red;
+}
+
+span {
+  color: red;
+  font-size: 17px;
+}
+a {
+  color: purple;
+  font-weight: 700;
+  font-size: 19px;
+}
+select {
+  margin-left: 10px;
+  padding: 5px;
+  font-weight: 800;
+  font-size: 15px;
+}
+
+input {
+  width: auto;
+}
+
+.totalSpecialStyling {
+  color: gold;
+  background-color: rgb(0, 0, 0);
+  border: 3px solid;
+  border-radius: 8px;
+  padding: 7px;
+  margin: 10px;
+
+  /* width: 30px; */
+}
+.divideFreeText {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.freeText,
+.freeText > label {
+  color: blueviolet;
+  padding: 6px;
+}
+.dateAndDay {
+  display: flex;
+  /* color: rebeccapurple; */
+  align-items: center;
+  gap: 100px;
+  margin: 0;
+  padding: 0;
+}
+h3 {
+  margin: 8px;
+}
+.totalClass {
+  /* margin-top: 40px; */
+}
+/* 
+.postiveColor {
+  background-color: rgb(0, 250, 25);
+} */
+
+select[value="+"] {
+  background-color: green;
+  color: white; /* Change text color for better contrast */
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 90%; /* Adjust the font size */
+  }
+
+  /* Adjust other elements */
+  p,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  label {
+    font-size: 96%;
+    /* margin: 0.5em 0;  */
+  }
+
+  /* Adjust padding for other elements as needed */
+  /* Example */
+}
