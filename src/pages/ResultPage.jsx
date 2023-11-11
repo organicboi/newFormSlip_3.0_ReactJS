@@ -11,6 +11,8 @@ function ResultPage() {
 
   const [mainHeading, setMainHeading] = useState("Group Name");
   const [currentDate, setCurrentDate] = useState("Group Name");
+  const [winOrLoseSelectedValue, setSelectedValue] = useState("none");
+  const [finalDisplayResult, setFinalDisplayResult] = useState("");
 
   //   From start
   const [totalPlayValue, setTotalPlayValue] = useState(0);
@@ -65,7 +67,24 @@ function ResultPage() {
       console.log(formData.oldBalanceSelect);
     }
   }, [formData]);
+  const handleSelectChange = (event) => {
+    setSelectedValue(event.target.value);
 
+    // You can add backend code here based on the selected value
+    if (event.target.value === "1") {
+      // Backend code for option 1
+      setFinalDisplayResult("मी देणे 🟢");
+    } else if (event.target.value === "0") {
+      // Backend code for option 0
+      setFinalDisplayResult("तुम्ही देणे 🔴");
+    } else if (event.target.value === "3") {
+      // Backend code for option 0
+      setFinalDisplayResult("Mai Dena 🟢");
+    } else if (event.target.value === "4") {
+      // Backend code for option 0
+      setFinalDisplayResult("Aap Dena 🔴");
+    }
+  };
   // retriveing data from form
   // retriveing data from form
   // retriveing data from form
@@ -158,6 +177,12 @@ function ResultPage() {
   ////new code here
   ////new code here
   ////new code here
+  const sureshBhaiStyle = {
+    color: "green",
+    fontWeight: 700,
+    fontSize: "20px",
+    textShadow: "1px 1px 1px rgba(0, 0, 0, 0.5)",
+  };
 
   return (
     <div className="main_container">
@@ -165,6 +190,7 @@ function ResultPage() {
         <h1>{mainHeading}</h1>
         <div className="dateAndDay">
           <h3>{currentDate}</h3>
+          <h3 style={sureshBhaiStyle}>Suresh Bhai</h3>
           <h3>{dayOfWeek}</h3>
         </div>
       </div>
@@ -217,6 +243,28 @@ function ResultPage() {
           <label htmlFor="GrandTotal">Total Wining </label>
 
           <h4 className="totalSpecialStyling ">{grandTotalWining}/-</h4>
+          <hr />
+          <label htmlFor="FinalReusltText">
+            Result:-
+            <select
+              value={winOrLoseSelectedValue}
+              onChange={handleSelectChange}
+            >
+              <option value="none">None</option>
+              <option value="3" className="postiveColor">
+                Mai Dena 🟢
+              </option>
+              <option value="1" className="postiveColor">
+                मी देणे 🟢
+              </option>
+              <option value="0" className="negativeColor">
+                तुम्ही देणे 🔴
+              </option>
+              <option value="4" className="negativeColor">
+                Aap Dena 🔴
+              </option>
+            </select>
+          </label>
         </div>
         <div className="section_1 box">
           <label htmlFor="totalPlay">Total Play = </label>
@@ -238,23 +286,10 @@ function ResultPage() {
           <hr />
           <label htmlFor="Total">Grand Total = </label>
           <h4 className="totalSpecialStyling">{afterAdvanceTotal}/-</h4>
-          <hr />
-          <label htmlFor="FinalReusltText">
-            Result:-
-            <select>
-              <option value="none">None</option>
-              <option value="1" className="postiveColor">
-                मी देणे 🟢
-              </option>
-              <option value="0" className="negativeColor">
-                तुम्ही देणे 🔴
-              </option>
-            </select>
-          </label>
         </div>
       </div>
-      <div className="date freeText">
-        <label htmlFor="FinalReusltText">Suresh Bahi</label>
+      <div className="finalResultText">
+        <h1>{finalDisplayResult}</h1>
       </div>
     </div>
   );

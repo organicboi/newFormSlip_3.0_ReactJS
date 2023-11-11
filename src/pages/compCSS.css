@@ -109,7 +109,7 @@ input {
   display: flex;
   /* color: rebeccapurple; */
   align-items: center;
-  gap: 100px;
+  gap: 20px;
   margin: 0;
   padding: 0;
 }
@@ -128,6 +128,16 @@ select[value="+"] {
   background-color: green;
   color: white; /* Change text color for better contrast */
 }
+
+.finalResultText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 50px;
+  background-color: aqua;
+  border-radius: 40px;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   body {

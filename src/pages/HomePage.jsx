@@ -63,7 +63,7 @@ function HomePage() {
 
   return (
     <div className="mainForm">
-      <h2>Generate Slip</h2>
+      <h1>Generate Slip</h1>
       <button type="button" onClick={handleReset}>
         Reset
       </button>
