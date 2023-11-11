@@ -194,20 +194,24 @@ function ResultPage() {
         <div className="section_2 box">
           <label htmlFor="Ank">Ank :- </label>
           {/* <input type="number" onChange={(e) => setAnkValue(e.target.value)} /> */}
+          <span>{ankValue}</span>
           <span> = {ankTotal}</span>
 
           <hr />
           <label htmlFor="SP">SP :- </label>
           {/* <input type="number" onChange={(e) => setspValue(e.target.value)} /> */}
+          <span> {spValue}</span>
           <span> = {spTotal}</span>
           <hr />
 
           <label htmlFor="DP">DP :- </label>
           {/* <input type="number" onChange={(e) => setdpValue(e.target.value)} /> */}
+          <span>{dpValue}</span>
           <span> = {dpTotal}</span>
           <hr />
           <label htmlFor="Jodi">Jodi :- </label>
           {/* <input type="number" onChange={(e) => setjodiValue(e.target.value)} /> */}
+          <span>{jodiValue}</span>
           <span> = {jodiTotal}</span>
           <hr />
           <label htmlFor="GrandTotal">Total Wining </label>
