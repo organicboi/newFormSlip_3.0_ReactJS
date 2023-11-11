@@ -176,13 +176,13 @@ function ResultPage() {
           </label>
           <label htmlFor="">
             Old Balance:-
-            <b>{advanceMoney}</b>
+            <b>{oldValue}</b>
           </label>
         </div>
         <div className="date freeText">
           <label htmlFor="">
             Advace Money:-
-            <b>{oldValue}</b>
+            <b>{advanceMoney}</b>
           </label>
           <label htmlFor="">
             Winning :-
