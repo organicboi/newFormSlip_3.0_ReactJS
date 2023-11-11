@@ -237,7 +237,7 @@ function ResultPage() {
           <span>{oldValue}</span>
           <hr />
           <label htmlFor="Total">Grand Total = </label>
-          <h4 className="totalSpecialStyling">{TotalCalc}/-</h4>
+          <h4 className="totalSpecialStyling">{afterAdvanceTotal}/-</h4>
           <hr />
           <label htmlFor="FinalReusltText">
             Result:-
