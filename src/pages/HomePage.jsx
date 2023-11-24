@@ -23,6 +23,8 @@ function HomePage() {
     totalPlaySelect: "",
     oldBalanceSelect: "",
     advanceMoneySelect: "",
+    ankValueSelect: "",
+    jodiValueSelect: "",
   });
 
   const navigate = useNavigate();
@@ -58,21 +60,23 @@ function HomePage() {
       selectedDate: "",
       oldBalanceSelect: "",
       advanceMoneySelect: "",
+      ankValueSelect: "",
+      jodiValueSelect: "",
     });
   };
 
   return (
-    <div className="mainForm">
+    <div className='mainForm'>
       <h1>Generate Slip</h1>
-      <button type="button" onClick={handleReset}>
+      <button type='button' onClick={handleReset}>
         Reset
       </button>
       <form onSubmit={handleSubmit}>
         <label>
           Company:
           <input
-            type="text"
-            name="mainHeading"
+            type='text'
+            name='mainHeading'
             value={formData.mainHeading}
             onChange={handleChange}
           />
@@ -81,8 +85,8 @@ function HomePage() {
         <label>
           Select a Date:
           <input
-            type="date"
-            name="selectedDate"
+            type='date'
+            name='selectedDate'
             value={formData.selectedDate}
             onChange={handleChange}
           />
@@ -91,39 +95,39 @@ function HomePage() {
         <label>
           Total Play:
           <input
-            type="number"
-            name="totalPlay"
+            type='number'
+            name='totalPlay'
             value={formData.totalPlay}
             onChange={handleChange}
           />
           <select
-            name="totalPlaySelect"
+            name='totalPlaySelect'
             value={formData.totalPlaySelect}
             onChange={handleChange}
           >
-            <option value="">Select an option</option>
-            <option value="0">0%</option>
-            <option value="5">5%</option>
-            <option value="10">10% </option>
+            <option value=''>Select an option</option>
+            <option value='0'>0%</option>
+            <option value='5'>5%</option>
+            <option value='10'>10% </option>
           </select>
         </label>
         <br />
         <label>
           Old Balance:
           <input
-            type="number"
-            name="oldBalance"
+            type='number'
+            name='oldBalance'
             value={formData.oldBalance}
             onChange={handleChange}
           />
           <select
-            name="oldBalanceSelect"
+            name='oldBalanceSelect'
             value={formData.oldBalanceSelect}
             onChange={handleChange}
           >
-            <option value="">Select an option</option>
-            <option value="1">Balance Plus</option>
-            <option value="0">Balance Minus</option>
+            <option value=''>Select an option</option>
+            <option value='1'>Balance Plus</option>
+            <option value='0'>Balance Minus</option>
           </select>
         </label>
         <br />
@@ -132,19 +136,19 @@ function HomePage() {
         <label>
           Advance Money:
           <input
-            type="number"
-            name="advanceMoney"
+            type='number'
+            name='advanceMoney'
             value={formData.advanceMoney}
             onChange={handleChange}
           />
           <select
-            name="advanceMoneySelect"
+            name='advanceMoneySelect'
             value={formData.advanceMoneySelect}
             onChange={handleChange}
           >
-            <option value="">Select an option</option>
-            <option value="1">Advance Plus</option>
-            <option value="0"> Advance Minus</option>
+            <option value=''>Select an option</option>
+            <option value='1'>Advance Plus</option>
+            <option value='0'> Advance Minus</option>
           </select>
         </label>
 
@@ -154,19 +158,28 @@ function HomePage() {
         <label>
           Ank:
           <input
-            type="number"
-            name="ankValue"
+            type='number'
+            name='ankValue'
             value={formData.ankValue}
             onChange={handleChange}
           />
+          <select
+            name='ankValueSelect'
+            value={formData.ankValueSelect}
+            onChange={handleChange}
+          >
+            <option value=''>Select an option</option>
+            <option value='9'>9%</option>
+            <option value='9.5'>9.5%</option>
+          </select>
         </label>
         <br />
         <br />
         <label>
           SP:
           <input
-            type="number"
-            name="spValue"
+            type='number'
+            name='spValue'
             value={formData.spValue}
             onChange={handleChange}
           />
@@ -176,8 +189,8 @@ function HomePage() {
         <label>
           DP:
           <input
-            type="number"
-            name="dpValue"
+            type='number'
+            name='dpValue'
             value={formData.dpValue}
             onChange={handleChange}
           />
@@ -187,15 +200,24 @@ function HomePage() {
         <label>
           Jodi:
           <input
-            type="number"
-            name="jodiValue"
+            type='number'
+            name='jodiValue'
             value={formData.jodiValue}
             onChange={handleChange}
           />
+          <select
+            name='jodiValueSelect'
+            value={formData.jodiValueSelect}
+            onChange={handleChange}
+          >
+            <option value=''>Select an option</option>
+            <option value='90'>90</option>
+            <option value='95'>95</option>
+          </select>
         </label>
         <br />
 
-        <button type="submit">Submit</button>
+        <button type='submit'>Submit</button>
       </form>
     </div>
   );
