@@ -133,34 +133,27 @@ function ResultPage() {
 
   switch (oldBalanceSelect) {
     case "0":
-      TotalCalc = parseFloat(bal_win) + parseFloat(oldValue);
-      console.log("It was minus selected and plus done");
-
+      TotalCalc = parseFloat(bal_win) - parseFloat(oldValue);
+      // minus
       break;
     case "1":
-      TotalCalc = parseFloat(bal_win) - parseFloat(oldValue);
-      console.log("It was plus selected and minus done");
-
+      TotalCalc = parseFloat(bal_win) + parseFloat(oldValue);
+      // plus
       break;
     default:
-
-    // Handle invalid operator
   }
+
   let afterAdvanceTotal = 0;
   switch (advanceMoneySelect) {
     case "0":
       afterAdvanceTotal = parseFloat(TotalCalc) + parseFloat(advanceMoney);
-      console.log("It was minus selected and plus done");
-
+      // minus
       break;
     case "1":
       afterAdvanceTotal = parseFloat(TotalCalc) - parseFloat(advanceMoney);
-      console.log("It was plus selected and minus done");
-
+      // plus
       break;
     default:
-
-    // Handle invalid operator
   }
   // section_1 ends
 
