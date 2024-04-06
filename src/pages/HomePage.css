@@ -70,11 +70,4 @@ hr {
     max-width: 100%;
     /* box-shadow: none; */
   }
-  label {
-    /* font-size: 18px; */
-    border: 1px solid black;
-    border-radius: 10px;
-
-    padding: 5px;
-  }
 }
