@@ -71,10 +71,10 @@ hr {
     /* box-shadow: none; */
   }
   label {
-    font-size: 18px;
+    /* font-size: 18px; */
     border: 1px solid black;
     border-radius: 10px;
-    color: violet;
+
     padding: 5px;
   }
 }
