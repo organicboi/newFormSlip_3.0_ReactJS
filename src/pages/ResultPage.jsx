@@ -23,6 +23,8 @@ function ResultPage() {
   // let []
   let [advanceMoney, setadvanceMoney] = useState("");
   let [ankValueSelect, setAnkValueSelect] = useState("");
+  let [spValueSelect, setSpValueSelect] = useState("");
+  let [dpValueSelect, setDpValueSelect] = useState("");
   let [jodiValueSelect, setjodiValueSelect] = useState("");
   //Form ends
   // section_2 starts
@@ -46,8 +48,6 @@ function ResultPage() {
     { weekday: "long" }
   );
 
-  console.log(formData);
-
   useEffect(() => {
     if (formData) {
       // Parsing to integer using parseInt
@@ -66,6 +66,8 @@ function ResultPage() {
       setOldBalanceSelect(formData.oldBalanceSelect);
       setAdvanceMoneySelect(formData.advanceMoneySelect);
       setAnkValueSelect(formData.ankValueSelect);
+      setSpValueSelect(formData.spValueSelect);
+      setDpValueSelect(formData.dpValueSelect);
       setjodiValueSelect(formData.jodiValueSelect);
     }
   }, [formData]);
@@ -94,9 +96,12 @@ function ResultPage() {
 
   // the logic 1
   const ankTotal = ankValue * ankValueSelect;
-  const spTotal = spValue * 150;
-  const dpTotal = dpValue * 300;
+  const spTotal = spValue * spValueSelect;
+  const dpTotal = dpValue * dpValueSelect;
   const jodiTotal = jodiValue * jodiValueSelect;
+
+  console.log(totalPlaySelect);
+
   // the logic 2
   const grandTotalWining = ankTotal + spTotal + dpTotal + jodiTotal;
   // section_ ends
@@ -105,23 +110,6 @@ function ResultPage() {
   let totalPlayPercent = 0;
   totalPlayPercent = Math.floor(totalPlayValue * (totalPlaySelect / 100));
 
-  // switch (totalPlaySelect) {
-  //   case "0":
-  //     totalPlayPercent = Math.floor(totalPlayValue);
-  //     console.log("5%done");
-
-  //     break;
-  //   case "5":
-  //     console.log("5%done");
-
-  //     break;
-  //   case "10":
-  //     totalPlayPercent = Math.floor(totalPlayValue / 10) * 1;
-  //     console.log("10%done");
-
-  //     break;
-  //   default:
-  // }
   const balance = totalPlayValue - totalPlayPercent;
   let bal_win = 0;
   if (balance > grandTotalWining) {
@@ -179,112 +167,114 @@ function ResultPage() {
     fontSize: "20px",
     textShadow: "1px 1px 1px rgba(0, 0, 0, 0.5)",
   };
+  // console.log("ank value" + ankValueSelect);
+  // console.log("sp value" + spValueSelect);
 
   return (
-    <div className='main_container'>
-      <div className='date'>
+    <div className="main_container">
+      <div className="date">
         <h1>{mainHeading}</h1>
-        <div className='dateAndDay'>
+        <div className="dateAndDay">
           <h3>{currentDate}</h3>
           <h3 style={sureshBhaiStyle}>Suresh Bhai</h3>
           <h3>{dayOfWeek}</h3>
         </div>
       </div>
-      <div className='divideFreeText'>
-        <div className='date freeText'>
-          <label htmlFor=''>
+      <div className="divideFreeText">
+        <div className="date freeText">
+          <label htmlFor="">
             Total Play:-
             <b>{totalPlayValue}</b>
           </label>
-          <label htmlFor=''>
+          <label htmlFor="">
             Old Balance:-
             <b>{oldValue}</b>
           </label>
         </div>
-        <div className='date freeText'>
-          <label htmlFor=''>
+        <div className="date freeText">
+          <label htmlFor="">
             Advace Money:-
             <b>{advanceMoney}</b>
           </label>
-          <label htmlFor=''>
+          <label htmlFor="">
             Winning :-
             <b>{grandTotalWining}</b>
           </label>
         </div>
       </div>
-      <div className='container'>
-        <div className='section_2 box'>
-          <label htmlFor='Ank'>Ank :- </label>
+      <div className="container">
+        <div className="section_2 box">
+          <label htmlFor="Ank">Ank :- </label>
           {/* <input type="number" onChange={(e) => setAnkValue(e.target.value)} /> */}
           <span>{ankValue}</span>
           <span> = {ankTotal}</span>
 
           <hr />
-          <label htmlFor='SP'>SP :- </label>
+          <label htmlFor="SP">SP :- </label>
           {/* <input type="number" onChange={(e) => setspValue(e.target.value)} /> */}
           <span> {spValue}</span>
           <span> = {spTotal}</span>
           <hr />
 
-          <label htmlFor='DP'>DP :- </label>
+          <label htmlFor="DP">DP :- </label>
           {/* <input type="number" onChange={(e) => setdpValue(e.target.value)} /> */}
           <span>{dpValue}</span>
           <span> = {dpTotal}</span>
           <hr />
-          <label htmlFor='Jodi'>Jodi :- </label>
+          <label htmlFor="Jodi">Jodi :- </label>
           {/* <input type="number" onChange={(e) => setjodiValue(e.target.value)} /> */}
           <span>{jodiValue}</span>
           <span> = {jodiTotal}</span>
           <hr />
-          <label htmlFor='GrandTotal'>Total Wining </label>
+          <label htmlFor="GrandTotal">Total Wining </label>
 
-          <h4 className='totalSpecialStyling '>{grandTotalWining}/-</h4>
+          <h4 className="totalSpecialStyling ">{grandTotalWining}/-</h4>
           <hr />
-          <label htmlFor='FinalReusltText'>
+          <label htmlFor="FinalReusltText">
             Result:-
             <select
               value={winOrLoseSelectedValue}
               onChange={handleSelectChange}
             >
-              <option value='none'>None</option>
-              <option value='3' className='postiveColor'>
+              <option value="none">None</option>
+              <option value="3" className="postiveColor">
                 Mai Dena 🟢
               </option>
-              <option value='1' className='postiveColor'>
+              <option value="1" className="postiveColor">
                 मी देणे 🟢
               </option>
-              <option value='0' className='negativeColor'>
+              <option value="0" className="negativeColor">
                 तुम्ही देणे 🔴
               </option>
-              <option value='4' className='negativeColor'>
+              <option value="4" className="negativeColor">
                 Aap Dena 🔴
               </option>
             </select>
           </label>
         </div>
-        <div className='section_1 box'>
-          <label htmlFor='totalPlay'>Total Play = </label>
+        <div className="section_1 box">
+          <label htmlFor="totalPlay">Total Play = </label>
           <span>{totalPlayValue}</span>
-          <label htmlFor='%value'> % </label>
+          <label htmlFor="%value"> % </label>
           <span>{totalPlayPercent}</span>
           <hr />
-          <label htmlFor='Balance'>Balance = </label>
+          <label htmlFor="Balance">Balance = </label>
           <span>{balance}</span>
           <hr />
-          <label htmlFor='wining'>Wining = </label>
+          <label htmlFor="wining">Wining = </label>
           <span>{grandTotalWining}</span>
           <hr />
-          <label htmlFor='winTotal'>bal-win = </label>
+          <label htmlFor="winTotal">bal-win = </label>
           <span>{bal_win}</span>
           <hr />
-          <label htmlFor='oldBal'>Old-Balance = </label>
+          <label htmlFor="oldBal">Old-Balance = </label>
           <span>{oldValue}</span>
           <hr />
-          <label htmlFor='Total'>Grand Total = </label>
-          <h4 className='totalSpecialStyling'>{afterAdvanceTotal}/-</h4>
+          <label htmlFor="Total">Grand Total = </label>
+          <h4 className="totalSpecialStyling">{afterAdvanceTotal}/-</h4>
         </div>
       </div>
-      <div className='finalResultText'>
+      <div className="finalResultText">
         <h1>{finalDisplayResult}</h1>
       </div>
     </div>
