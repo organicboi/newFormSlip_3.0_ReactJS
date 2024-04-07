@@ -157,6 +157,10 @@ select[value="+"] {
     /* margin: 0.5em 0;  */
   }
 
+  .resultDeclaration {
+    width: 100%;
+  }
+
   /* Adjust padding for other elements as needed */
   /* Example */
 }

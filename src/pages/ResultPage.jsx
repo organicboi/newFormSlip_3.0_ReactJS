@@ -233,6 +233,7 @@ function ResultPage() {
           <label htmlFor="FinalReusltText">
             Result:-
             <select
+              className="resultDeclaration"
               value={winOrLoseSelectedValue}
               onChange={handleSelectChange}
             >
