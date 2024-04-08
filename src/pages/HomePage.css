@@ -66,6 +66,7 @@ hr {
 
 @media screen and (max-width: 480px) {
   /* Adjust styles for smaller screens */
+
   .mainForm {
     max-width: 100%;
     /* box-shadow: none; */

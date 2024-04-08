@@ -169,11 +169,18 @@ function ResultPage() {
   };
   // console.log("ank value" + ankValueSelect);
   // console.log("sp value" + spValueSelect);
+  const [scale, setScale] = useState(1);
+  const handleZoomIn = () => {
+    setScale(scale + 0.1);
+  };
+  const handleZoomOut = () => {
+    setScale(scale - 0.1);
+  };
 
   return (
-    <div className="main_container">
+    <div className="main_container" style={{ transform: `scale(${scale})` }}>
       <div className="date">
-        <h1>{mainHeading}</h1>
+        <span className="mainHeading">{mainHeading}</span>
         <div className="dateAndDay">
           <h3>{currentDate}</h3>
           <h3 style={sureshBhaiStyle}>Suresh Bhai</h3>
@@ -277,6 +284,10 @@ function ResultPage() {
       </div>
       <div className="finalResultText">
         <h1>{finalDisplayResult}</h1>
+      </div>
+      <div style={{ display: "flex", gap: 50 }}>
+        <button onClick={handleZoomIn}>Zoom In</button>
+        <button onClick={handleZoomOut}>Zoom Out</button>
       </div>
     </div>
   );
